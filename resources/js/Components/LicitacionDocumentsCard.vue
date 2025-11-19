@@ -5,7 +5,7 @@
     :title="tooltip"
   >
     <div class="flex items-center">
-      <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4 group-hover:bg-green-200 transition-colors">
+      <div class="p-3 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 mr-4 group-hover:bg-green-200 dark:group-hover:bg-green-800 transition-colors">
         <!-- Ícono de handshake -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -18,8 +18,8 @@
         </svg>
       </div>
       <div>
-        <h3 class="text-sm font-medium text-gray-500">Licitaciones</h3>
-        <p class="text-2xl font-bold text-green-600">{{ count }}</p>
+        <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Licitaciones</h3>
+        <p class="text-2xl font-bold text-green-600 dark:text-green-400">{{ count }}</p>
       </div>
     </div>
   </CardBox>

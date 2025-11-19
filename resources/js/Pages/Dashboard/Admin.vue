@@ -77,59 +77,59 @@ const documentosVencidosCount = computed(() => {
 
       <!-- Card de Documentos Vigentes -->
       <div @click="activeSection = 'vigentes'" :class="[
-        'bg-white rounded-lg p-4 border-2 cursor-pointer transition-all duration-200 hover:shadow-md',
+        'bg-white dark:bg-slate-900 rounded-lg p-4 border-2 cursor-pointer transition-all duration-200 hover:shadow-md',
         activeSection === 'vigentes'
-          ? 'border-green-500 bg-green-50'
-          : 'border-gray-200 hover:border-green-300'
+          ? 'border-green-500 bg-green-50 dark:bg-green-950'
+          : 'border-gray-200 dark:border-slate-700 hover:border-green-300 dark:hover:border-green-600'
       ]">
         <div class="flex items-center">
           <BaseIcon :path="mdiCheckCircle" :class="[
             'mr-3',
-            activeSection === 'vigentes' ? 'text-green-600' : 'text-green-500'
+            activeSection === 'vigentes' ? 'text-green-600 dark:text-green-400' : 'text-green-500 dark:text-green-400'
           ]" size="24" />
           <div>
             <div class="text-lg font-semibold"
-              :class="activeSection === 'vigentes' ? 'text-green-800' : 'text-gray-800'">
+              :class="activeSection === 'vigentes' ? 'text-green-800 dark:text-green-200' : 'text-gray-800 dark:text-gray-200'">
               {{ documentosVigentesCount }}
             </div>
             <div :class="[
               'text-sm',
-              activeSection === 'vigentes' ? 'text-green-600' : 'text-gray-600'
+              activeSection === 'vigentes' ? 'text-green-600 dark:text-green-400' : 'text-gray-600 dark:text-gray-400'
             ]">
               Doc. Vigentes
             </div>
           </div>
         </div>
-        <div v-if="activeSection === 'vigentes'" class="mt-2 text-xs text-green-600 font-medium">
+        <div v-if="activeSection === 'vigentes'" class="mt-2 text-xs text-green-600 dark:text-green-400 font-medium">
           ← Sección activa
         </div>
       </div>
 
       <!-- Card de Documentos Vencidos -->
       <div @click="activeSection = 'vencidos'" :class="[
-        'bg-white rounded-lg p-4 border-2 cursor-pointer transition-all duration-200 hover:shadow-md',
+        'bg-white dark:bg-slate-900 rounded-lg p-4 border-2 cursor-pointer transition-all duration-200 hover:shadow-md',
         activeSection === 'vencidos'
-          ? 'border-red-500 bg-red-50'
-          : 'border-gray-200 hover:border-red-300'
+          ? 'border-red-500 bg-red-50 dark:bg-red-950'
+          : 'border-gray-200 dark:border-slate-700 hover:border-red-300 dark:hover:border-red-600'
       ]">
         <div class="flex items-center">
           <BaseIcon :path="mdiAlert" :class="[
             'mr-3',
-            activeSection === 'vencidos' ? 'text-red-600' : 'text-red-500'
+            activeSection === 'vencidos' ? 'text-red-600 dark:text-red-400' : 'text-red-500 dark:text-red-400'
           ]" size="24" />
           <div>
-            <div class="text-lg font-semibold" :class="activeSection === 'vencidos' ? 'text-red-800' : 'text-gray-800'">
+            <div class="text-lg font-semibold" :class="activeSection === 'vencidos' ? 'text-red-800 dark:text-red-200' : 'text-gray-800 dark:text-gray-200'">
               {{ documentosVencidosCount }}
             </div>
             <div :class="[
               'text-sm',
-              activeSection === 'vencidos' ? 'text-red-600' : 'text-gray-600'
+              activeSection === 'vencidos' ? 'text-red-600 dark:text-red-400' : 'text-gray-600 dark:text-gray-400'
             ]">
               Doc. Vencidos
             </div>
           </div>
         </div>
-        <div v-if="activeSection === 'vencidos'" class="mt-2 text-xs text-red-600 font-medium">
+        <div v-if="activeSection === 'vencidos'" class="mt-2 text-xs text-red-600 dark:text-red-400 font-medium">
           ← Sección activa
         </div>
       </div>
@@ -141,9 +141,9 @@ const documentosVencidosCount = computed(() => {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Documentos Técnicos -->
         <CardBox>
-          <div class="p-6 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-blue-50">
-            <h2 class="text-xl font-semibold text-gray-800 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-600" viewBox="0 0 20 20"
+          <div class="p-6 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-indigo-50 dark:from-slate-800 to-blue-50 dark:to-slate-700">
+            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" viewBox="0 0 20 20"
                 fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
@@ -153,36 +153,36 @@ const documentosVencidosCount = computed(() => {
             </h2>
           </div>
           <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-              <thead class="bg-gray-50">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-slate-800">
                 <tr>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Documento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Departamento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Revalidación</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Vigencia</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Ver</th>
                 </tr>
               </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
+              <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-200 dark:divide-gray-700">
                 <tr v-for="documento in documentos.data" :key="documento.id"
-                  class="hover:bg-gray-50 transition-colors duration-150">
-                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900" data-label="Documento">
+                  class="hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors duration-150">
+                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900 dark:text-gray-100" data-label="Documento">
                     {{ documento.tipo_de_documento.nombre_documento }}
                   </td>
-                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500" data-label="Departamento">
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500 dark:text-gray-400" data-label="Departamento">
                     {{ documento.departamento.nombre_departamento }}
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-label="Fecha Revalidación">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400" data-label="Fecha Revalidación">
                     <div class="flex flex-col">
                       <div>{{ moment(documento.fecha_revalidacion).format("DD/MM/YYYY") }}</div>
                       <span :class="{
@@ -224,9 +224,9 @@ const documentosVencidosCount = computed(() => {
 
         <!-- Documentos Legales -->
         <CardBox>
-          <div class="p-6 border-b border-gray-200 bg-gradient-to-r from-green-50 to-teal-50">
-            <h2 class="text-xl font-semibold text-gray-800 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-600" viewBox="0 0 20 20"
+          <div class="p-6 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-green-50 dark:from-slate-800 to-teal-50 dark:to-slate-700">
+            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-600 dark:text-teal-400" viewBox="0 0 20 20"
                 fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
@@ -238,36 +238,36 @@ const documentosVencidosCount = computed(() => {
             </h2>
           </div>
           <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-              <thead class="bg-gray-50">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-slate-800">
                 <tr>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Documento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Departamento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Revalidación</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Vigencia</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Ver</th>
                 </tr>
               </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
+              <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-200 dark:divide-gray-700">
                 <tr v-for="documento in documentosLegal.data" :key="documento.id"
-                  class="hover:bg-gray-50 transition-colors duration-150">
-                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900" data-label="Documento">
+                  class="hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors duration-150">
+                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900 dark:text-gray-100" data-label="Documento">
                     {{ documento.tipo_de_documento.nombre_documento }}
                   </td>
-                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500" data-label="Departamento">
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500 dark:text-gray-400" data-label="Departamento">
                     {{ documento.departamento.nombre_departamento }}
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-label="Fecha Revalidación">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400" data-label="Fecha Revalidación">
                     <div class="flex flex-col">
                       <div>{{ moment(documento.fecha_revalidacion).format("DD/MM/YYYY") }}</div>
                       <span :class="{
@@ -279,7 +279,7 @@ const documentosVencidosCount = computed(() => {
                           `${documento.dias_restantes_revalidacion} días` }} </span>
                     </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-label="Fecha Vigencia">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400" data-label="Fecha Vigencia">
                     <div class="flex flex-col">
                       <div>{{ moment(documento.fecha_vigencia).format("DD/MM/YYYY") }}</div>
                       <span :class="{
@@ -315,9 +315,9 @@ const documentosVencidosCount = computed(() => {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Documentos Técnicos Vencidos -->
         <CardBox>
-          <div class="p-6 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-blue-50">
-            <h2 class="text-xl font-semibold text-gray-800 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-600" viewBox="0 0 20 20"
+          <div class="p-6 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-indigo-50 dark:from-slate-800 to-blue-50 dark:to-slate-700">
+            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-600 dark:text-blue-400" viewBox="0 0 20 20"
                 fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
@@ -327,36 +327,36 @@ const documentosVencidosCount = computed(() => {
             </h2>
           </div>
           <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-              <thead class="bg-gray-50">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-slate-800">
                 <tr>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Documento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Departamento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Revalidación</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Vigencia</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Ver</th>
                 </tr>
               </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
+              <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-200 dark:divide-gray-700">
                 <tr v-for="documento in documentosVencidos.data" :key="documento.id"
-                  class="hover:bg-gray-50 transition-colors duration-150">
-                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900" data-label="Documento">
+                  class="hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors duration-150">
+                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900 dark:text-gray-100" data-label="Documento">
                     {{ documento.tipo_de_documento.nombre_documento }}
                   </td>
-                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500" data-label="Departamento">
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500 dark:text-gray-400" data-label="Departamento">
                     {{ documento.departamento.nombre_departamento }}
                   </td>
-                  <td data-label="Fecha Revalidación" class="px-6 py-4 text-sm text-gray-500">
+                  <td data-label="Fecha Revalidación" class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
                     <div class="flex flex-col">
                       <div>{{ moment(documento.fecha_revalidacion).format("DD/MM/YYYY") }}</div>
                       <span :class="{
@@ -372,7 +372,7 @@ const documentosVencidosCount = computed(() => {
                           ${documento.dias_restantes_revalidacion} días` }} </span>
                     </div>
                   </td>
-                  <td data-label="Fecha Vigencia" class="px-6 py-4 text-sm text-gray-500">
+                  <td data-label="Fecha Vigencia" class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
                     <div class="flex flex-col">
                       <div>{{ moment(documento.fecha_vigencia).format("DD/MM/YYYY") }}</div>
                       <span :class="{
@@ -405,9 +405,9 @@ const documentosVencidosCount = computed(() => {
 
         <!-- Documentos Legales Vencidos-->
         <CardBox>
-          <div class="p-6 border-b border-gray-200 bg-gradient-to-r from-green-50 to-teal-50">
-            <h2 class="text-xl font-semibold text-gray-800 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-600" viewBox="0 0 20 20"
+          <div class="p-6 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-green-50 dark:from-slate-800 to-teal-50 dark:to-slate-700">
+            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-600 dark:text-teal-400" viewBox="0 0 20 20"
                 fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
@@ -419,36 +419,36 @@ const documentosVencidosCount = computed(() => {
             </h2>
           </div>
           <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-              <thead class="bg-gray-50">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-slate-800">
                 <tr>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Documento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Departamento</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Revalidación</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Vigencia</th>
                   <th scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Ver</th>
                 </tr>
               </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
+              <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-200 dark:divide-gray-700">
                 <tr v-for="documento in documentosLegalVencidos.data" :key="documento.id"
-                  class="hover:bg-gray-50 transition-colors duration-150">
-                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900" data-label="Documento">
+                  class="hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors duration-150">
+                  <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900 dark:text-gray-100" data-label="Documento">
                     {{ documento.tipo_de_documento.nombre_documento }}
                   </td>
-                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500" data-label="Departamento">
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500 dark:text-gray-400" data-label="Departamento">
                     {{ documento.departamento.nombre_departamento }}
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-label="Fecha Revalidación">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400" data-label="Fecha Revalidación">
                     <div class="flex flex-col">
                       <div>{{ moment(documento.fecha_revalidacion).format("DD/MM/YYYY") }}</div>
                       <span :class="{
@@ -463,7 +463,7 @@ const documentosVencidosCount = computed(() => {
                           ${documento.dias_restantes_revalidacion} días` }} </span>
                     </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-label="Fecha Vigencia">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400" data-label="Fecha Vigencia">
                     <div class="flex flex-col">
                       <div>{{ moment(documento.fecha_vigencia).format("DD/MM/YYYY") }}</div>
                       <span :class="{
