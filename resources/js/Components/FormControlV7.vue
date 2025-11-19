@@ -130,9 +130,20 @@ watch(() => props.options, () => {
   height: 2rem;
 }
 
+:deep(.dark) .pagination-button {
+  background: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
 .pagination-button:hover:not(:disabled) {
   background: #f1f5f9;
   border-color: #cbd5e0;
+}
+
+:deep(.dark) .pagination-button:hover:not(:disabled) {
+  background: #475569;
+  border-color: #64748b;
 }
 
 .pagination-button:disabled {
@@ -143,5 +154,9 @@ watch(() => props.options, () => {
 .page-indicator {
   font-size: 0.875rem;
   color: #4a5568;
+}
+
+:deep(.dark) .page-indicator {
+  color: #cbd5e1;
 }
 </style>

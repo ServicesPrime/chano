@@ -294,6 +294,10 @@ watch(groupedDocumentTypes, () => {
   margin: 0;
 }
 
+:deep(.dark) .section-title {
+  color: #e2e8f0;
+}
+
 .pagination-controls {
   display: flex;
   align-items: center;
@@ -314,9 +318,20 @@ watch(groupedDocumentTypes, () => {
   height: 2rem;
 }
 
+:deep(.dark) .pagination-button {
+  background: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
 .pagination-button:hover:not(:disabled) {
   background: #f1f5f9;
   border-color: #cbd5e0;
+}
+
+:deep(.dark) .pagination-button:hover:not(:disabled) {
+  background: #475569;
+  border-color: #64748b;
 }
 
 .pagination-button:disabled {
@@ -327,6 +342,10 @@ watch(groupedDocumentTypes, () => {
 .page-indicator {
   font-size: 0.875rem;
   color: #4a5568;
+}
+
+:deep(.dark) .page-indicator {
+  color: #cbd5e1;
 }
 
 .document-types-container {
@@ -342,9 +361,19 @@ watch(groupedDocumentTypes, () => {
   transition: all 0.2s;
 }
 
+:deep(.dark) .document-type-card {
+  border-color: #475569;
+  background-color: #1e293b;
+}
+
 .document-type-card:hover {
   border-color: #cbd5e0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+:deep(.dark) .document-type-card:hover {
+  border-color: #64748b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .document-type-label {
@@ -375,11 +404,19 @@ watch(groupedDocumentTypes, () => {
   margin-bottom: 0.25rem;
 }
 
+:deep(.dark) .document-type-name {
+  color: #e2e8f0;
+}
+
 .document-meta {
   display: flex;
   gap: 0.75rem;
   font-size: 0.8125rem;
   color: #718096;
+}
+
+:deep(.dark) .document-meta {
+  color: #94a3b8;
 }
 
 .document-count::before {
@@ -396,6 +433,11 @@ watch(groupedDocumentTypes, () => {
   color: #718096;
   border: 1px dashed #e2e8f0;
   border-radius: 0.5rem;
+}
+
+:deep(.dark) .no-documents {
+  color: #94a3b8;
+  border-color: #475569;
 }
 
 @media (min-width: 768px) {
