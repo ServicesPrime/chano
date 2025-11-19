@@ -1,7 +1,7 @@
 <template>
     <CardBox class="hover:shadow-lg transition-shadow duration-300 cursor-pointer" @click="openModal">
       <div class="flex items-center">
-        <div class="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
+        <div class="p-3 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 mr-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -9,18 +9,18 @@
           </svg>
         </div>
         <div>
-          <h3 class="text-sm font-medium text-gray-500">Usuarios Registrados</h3>
-          <p class="text-2xl font-bold text-purple-600">{{ users }}</p>
+          <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Usuarios Registrados</h3>
+          <p class="text-2xl font-bold text-purple-600 dark:text-purple-400">{{ users }}</p>
         </div>
       </div>
   
       <!-- Modal -->
       <div v-if="isModalOpen" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" @click.self="closeModal">
-        <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
           <div class="p-6">
             <div class="flex justify-between items-start">
-              <h3 class="text-lg font-semibold text-gray-800">Detalles de Últimos  Usuarios Registrados</h3>
-              <button @click.stop="closeModal" class="text-gray-500 hover:text-gray-700">
+              <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Detalles de Últimos  Usuarios Registrados</h3>
+              <button @click.stop="closeModal" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -29,25 +29,25 @@
             
             <div class="mt-6">
               <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                  <thead class="bg-gray-50">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                  <thead class="bg-gray-50 dark:bg-slate-800">
                     <tr>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                         Nombre</th>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                         Correo</th>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                         Rol</th>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                         Registro</th>
                     </tr>
                   </thead>
-                  <tbody class="bg-white divide-y divide-gray-200">
-                    <tr v-for="user in latestUsers" :key="user.id" class="hover:bg-gray-50">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ user.name }}</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ user.email }}</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ user.role }}</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <tbody class="bg-white dark:bg-slate-900 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tr v-for="user in latestUsers" :key="user.id" class="hover:bg-gray-50 dark:hover:bg-slate-800">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">{{ user.name }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ user.email }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">{{ user.role }}</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                         {{ formatDate(user.created_at) }}
                       </td>
                     </tr>

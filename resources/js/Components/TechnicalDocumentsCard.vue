@@ -6,7 +6,7 @@
 
     >
       <div class="flex items-center">
-        <div class="p-3 rounded-full bg-indigo-100 text-indigo-600 mr-4">
+        <div class="p-3 rounded-full bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 mr-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -14,8 +14,8 @@
           </svg>
         </div>
         <div>
-          <h3 class="text-sm font-medium text-gray-500">{{label}}</h3>
-          <p class="text-2xl font-bold text-indigo-600">{{ count }}</p>
+          <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">{{label}}</h3>
+          <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{{ count }}</p>
         </div>
       </div>
     </CardBox>
